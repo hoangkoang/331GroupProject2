@@ -197,7 +197,26 @@ public class Application_FX extends Application
         primaryStage.setTitle("ShenandoahU Student Management System");
         primaryStage.setScene(primaryScene);
         primaryStage.show();
+
+        // Disable ComboBox 
+        lblAddInstruc2.setDisable(true);
+        boxInstruc.setDisable(true);
         
+        // If checkbox is pressed, enable ComboBox
+        // If checkbox is unpressed, disable ComboBox
+        cbNewInstruc.setOnAction(e -> 
+        {
+            if(!cbNewInstruc.isSelected())
+            {
+                lblAddInstruc2.setDisable(true);
+                boxInstruc.setDisable(true);               
+            }
+            else
+            {
+                lblAddInstruc2.setDisable(false);
+                boxInstruc.setDisable(false);                  
+            }            
+        });
     }
 
     /**
